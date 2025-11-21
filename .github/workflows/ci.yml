@@ -1,0 +1,36 @@
+name: Repo Quality Checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    name: Validate Markdown & YAML
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Markdown Linter
+        run: |
+          sudo apt-get update
+          sudo npm install -g markdownlint-cli
+
+      - name: Lint Markdown files
+        run: |
+          markdownlint "**/*.md" || true
+          echo "Markdown linting completed (non-blocking)."
+
+      - name: Install yamllint
+        run: |
+          sudo apt-get install -y yamllint
+
+      - name: Validate YAML files
+        run: |
+          yamllint . || true
+          echo "YAML validation completed (non-blocking)."
+
+      - name: Job complete
+        run: echo "CI checks finished successfully!"
