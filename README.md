@@ -22,6 +22,6 @@ This repository contains the implementation, configuration and reproduction inst
 3. Use VM or EC2 instances described in the thesis to run the simulation. :contentReference[oaicite:4]{index=4}
 
 ## Contact
-- Your Name: Ammaduddinbajwa702@gmail.com
+- Email: Ammaduddinbajwa702@gmail.com
 - LinkedIn: https://www.linkedin.com/in/ammaduddinbajwa
 
